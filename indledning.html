@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-<link rel="prev" href="chi-i-anden-tests.html">
-<link rel="next" href="binomialfordelingen.html">
+<link rel="prev" href="index.html">
+<link rel="next" href="chi-i-anden-tests.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -127,8 +127,8 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="anova" class="section level1">
-<h1><span class="header-section-number">Kapitel 3</span> ANOVA</h1>
+<div id="indledning" class="section level1">
+<h1><span class="header-section-number">Kapitel 1</span> Indledning</h1>
 <!-- BEGIN SENTRY - version 3.1 (Beta Build A) - Member Login Code Copyright © Sentrylogin.com, Shawn, Co. https://www.sentrylogin.com -->
 <meta name="robots" content="noindex, nofollow">
 <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
@@ -183,185 +183,179 @@ else{
 <!-- END Sentry Login Page Protection -->
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class="embed-container">
-<iframe src="https://player.vimeo.com/video/231386150" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+<iframe src="https://player.vimeo.com/video/228228340" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
 </iframe>
 </div>
-<p>ANOVA er en metode til at sammenligne middelværdierne for mere end to kvantitative variable. Skal man sammenligne to middelværdier med varianshomogenitet, benytter man pooled t-test, er der mere end 2 middelværdier benyttes ANOVA F-test . Forudsætningerne for at benytte testen er at populationerne er normalfordelte og har samme varians.</p>
-<p>ANOVA er en forkortelse af analysis of variances, man tester om middelværdierne er ens vha. varianserne.
-Vi undersøger om k populationer har samme middelværdi, hypoteserne bliver:</p>
-<p><span class="math display">\[H_0:\mu_1=\mu_2=...=\mu_k\]</span><span class="math display">\[H_1:Ikke\ alle\ middelvæ\ rdier\ er\ ens.\]</span></p>
-<p>Den totale variation SST kan opdeles i SSW og SSA hvor, SSW er variationen indenfor de k grupper, SSA er variationen mellem grupperne.</p>
-<p>Hvis variationen indenfor grupperne SSW er lille i forhold til variationen mellem grupperne SSA, er middelværdierne ikke ens.</p>
-<p>Herunder er et eksempel, hvor populationerne er dagsafkast for aktier, variationen indenfor grupperne SSW er lille i forhold til variationen mellem grupperne SSA, derfor er middelværdierne signifikant forskellige.</p>
-<p><img src="bookdown-demo_files/figure-html/anova1-1.svg" width="864" /></p>
-<p>Herunder er en figur med dagsafkast for aktier, hvor variationen indenfor grupperne SSW er stor i forhold til variationen mellem grupperne SSA, derfor er middelværdierne ikke signifikant forskellige.</p>
-<p><img src="bookdown-demo_files/figure-html/anova2-1.svg" width="864" /></p>
-<p>Herunder er et eksempel hvor forudsætningen om varianshomogenitet ikke er opfyldt, de 3 aktier har forskelligt variation.</p>
-<p><img src="bookdown-demo_files/figure-html/anova3-1.svg" width="864" /></p>
-<p>Et forsikringsselskab har udviklet 4 forskellige layouts til information om skadesdækning. Brugerne udsættes vilkårligt for et af de 4 layouts, selskabet registrerer tiderne for besøgene på hjemmesiderne for at afgøre hvilket design, der er optimalt mht. brugervenlighed og overskuelighed.</p>
-<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
-<div class="embed-container">
-<iframe src="https://player.vimeo.com/video/231384291" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
-</iframe>
-</div>
-<p>Hent datasættet <a href="Hjemmesidedesigns besøgstider i millisekunder.xls" download>Hjemmesidedesigns besøgstider i millisekunder</a>, der viser de 359 observede besøgstider på de 4 hjemmesider.</p>
-<p>Forsikringsselskabet ønsker at undersøge om der er forskel på besøgstiderne, vi opstiller hypoteserne:</p>
-<p><span class="math display">\[H_0:\mu_{Design 1}=\mu_{Design 2}=\mu_{Design 3}=\mu_{Design 4}\]</span><span class="math display">\[H_1:Ikke\ alle\ middelvæ\ rdier\ er\ ens\ for\ de\ 4\ designs.\]</span></p>
-<p>Freestat output
-<img src="img/anova1.png" /></p>
-<p>Vi får en F-teststørrelse på 6.0429, der resulterer i en p-værdi på 0.0005, hvilket er under signifikansniveauet på 0.05. Vi kan forkaster altså nulhypotesen om ens middelværdier.</p>
-<p>Freestat output
-<img src="img/anovaFtest.png" /></p>
-<p>Vi skal tjekke forudsætningen om varianshomogenitet</p>
-<p><span class="math display">\[H_0:\sigma_{Design 1}=\sigma_{Design 2}=\sigma_{Design 3}=\sigma_{Design 4}\]</span><span class="math display">\[H_1:Ikke\ alle\ varianser\ er\ ens\ for\ de\ 4\ designs.\]</span></p>
-<p>Vi får en teststørrelse på 1.4742741. Chi i anden testet giver os en p-værdi på 0.6882205, hvilket er større end signifikanssandsynligheden på 0.05, vi kan ikke afvise nulhypotesen. Varianserne er ens, så forudsætningen er opfyldt.</p>
-<p>Freestat output af Bartlett test for varianshomogenitet
-<img src="img/Bartlett.png" /></p>
-<p>Normalitet</p>
-<p>Herunder er 4 normalfraktildiagrammer, for de 4 designs, vi kan godt antage, stikprøverne stammer fra normalfordelte populationer.</p>
-<p><img src="bookdown-demo_files/figure-html/qqplots15_25-1.svg" width="864" /></p>
-<p>Tukey Kramer</p>
-<p>Vi kan undersøge hvilke designs der har de største afvigelser ved at se på forskellene mellem stikprøvegennemsnittene, der er størst forskel mellem besøgstiderne for design 1 og design 4.</p>
-<p><img src="img/Tukeykramer.png" /></p>
-<p>Vi kan grafisk sammenligne middelværdierne i boxplots, her ser vi ligeledes forskellen er størst mellem design 1 og design 4. Middelværdierne er markeret med orange prikker.</p>
-<p><img src="bookdown-demo_files/figure-html/boxplots-1.svg" width="864" /></p>
-<details>
-<p><summary>Spørgsmål 3 banker afkast</summary></p>
-<p>Hent datasættet <a href="3 Danske Banker Ugeafkast i procent.xls" download>3 Danske Banker Ugeafkast i procent</a>
-, i dette datasæt er de seneste 239 ugers afkast i procent for hhv. Danske Bank, Jyske Bank og Sydbank. Er der signifikant forskel på afkastene på de 3 bankaktier?</p>
-</details>
-<br>
-<details>
-<p><summary>Svar 3 banker afkast</summary>
-Vi opstiller hypoteserne for test af om middelværdierne er identiske:
-<span class="math display">\[H_0:\mu_{Danske Bank}=\mu_{Jyske Bank}=\mu_{Sydbank}\]</span><span class="math display">\[H_1:Ikke\ alle\ middelvæ\ rdier\ er\ ens\ for\ de\ 3\ banker\]</span></p>
-<p>Vi får variationen i grupperne SSW til 296772869957.892 og variationen mellem grupperne SSA til 15155248763.2056. Dette giver en F-teststørrelse på 6.0429 der resulterer i p-værdi på 0.0005. Vi kan altså ikke forkaste altså nulhypotesen om ens middelværdier.</p>
-<p>Vi kan da også se at de absolutte forskelle mellem stikprøvegennemsnittene er relativt små:</p>
+<p>Vi vil her se på sandsynligheder. Hvis vi forestiller os, man har på en cafe har spurgt 800 besøgende, om de drikker the, kaffe eller begge dele, og har fået følgende svar.</p>
 <table>
 <thead>
 <tr class="header">
-<th align="left">Forskelle mellem Banker</th>
-<th align="left">Absolutte forskelle</th>
+<th align="left">Kaffe</th>
+<th align="left">The</th>
+<th align="left">Både kaffe og the</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Danske Bank - Jyske Bank</td>
-<td align="left">0.12</td>
-</tr>
-<tr class="even">
-<td align="left">Danske Bank - Sydbank</td>
-<td align="left">0.05</td>
-</tr>
-<tr class="odd">
-<td align="left">Jyske Bank - Sydbank</td>
-<td align="left">0.17</td>
+<td align="left">600</td>
+<td align="left">400</td>
+<td align="left">200</td>
 </tr>
 </tbody>
 </table>
-<p>Vi skal tjekke forudsætningen om varianshomogenitet</p>
-<p><span class="math display">\[H_0:\sigma_{Danske Bank}=\sigma_{Jyske Bank}=\sigma_{Sydbank}\]</span><span class="math display">\[H_1:Ikke\ alle\ varianser\ er\ ens\ for\ de\ 3\ banker.\]</span></p>
-<p>Vi får en teststørrelse på 8.480305. Chi i anden testet giver os en p-værdi på 0.0144054, hvilket er mindre end signifikanssandsynligheden på 0.05, vi afviser nulhypotesen. Varianserne er ikke ens, så forudsætningen er ikke opfyldt. Vi kan således have problemer med kvaliteten af analysen.</p>
-<p>Normalitet</p>
-<p><img src="bookdown-demo_files/figure-html/qqplotbank-1.svg" width="864" /></p>
-<p>Vi kan grafisk sammenligne middelværdierne for ugeafkastet for de 3 banker i boxplots , her ser vi der ikke er stor forskel på middelværdierne. Middelværdierne er markeret med orange prikker.</p>
-<img src="bookdown-demo_files/figure-html/boxplotsbank-1.svg" width="864" />
-</details>
-<br>
-<details>
-<p><summary>Spørgsmål IMDB</summary></p>
-<p><a href="IMDB stikprøve på 759 film.xls" download>Hent IMDB data</a>, der viser data for 759 film simpelt tilfældigt udtrukket af en database med 759 film. Vi ønsker at se om, der er forskel på vurderingen af de forskellige genrer action, komedie, drama, documentar, romance og short, undersøg dette vha. ANOVA test</p>
-</details>
-<br>
-<details>
-<p><summary>Svar IMDB</summary></p>
-<p>Vi opstiller hypoteserne:</p>
-<p><span class="math display">\[H_0:\mu_{action}=\mu_{komedie}=\mu_{drama}=\mu_{documentar}=\mu_{romance}=\mu_{short}\]</span><span class="math display">\[H_1:Ikke\ alle\ middelvæ\ rdier\ er\ ens\ for\ de\ 5\ genrer.\]</span></p>
-<p>Vi får en F-teststørrelse på 10.786, der resulterer i en meget lille p-værdi på 0, hvilket er klart under signifikansniveauet på 0.05. Vi kan forkaster altså nulhypotesen om ens middelværdier.</p>
-<p>Vi skal tjekke forudsætningen om varianshomogenitet</p>
-<p><span class="math display">\[H_0:\sigma_{action}=\sigma_{komedie}=\sigma_{drama}=\sigma_{documentar}=\sigma_{romance}=\sigma_{short}\]</span><span class="math display">\[H_1:Ikke\ alle\ standardafvigelser\ er\ ens\ for\ de\ 5\ genrer.\]</span></p>
-<p>Vi får en teststørrelse på 7.1306596. Chi i anden testet giver os en p-værdi på 0.2111029.</p>
-<p>Normalitet</p>
-<p>Herunder er 5 normalfraktildiagrammer, for de 5 genrer, dokumentar og short genrerne ser ikke normalfordelte ud. Hvilket kan give problemer med kvaliteten i vor analyse.</p>
-<p><img src="bookdown-demo_files/figure-html/imdbqqplot-1.svg" width="864" /></p>
-<p><img src="bookdown-demo_files/figure-html/boxplotsimdb-1.svg" width="864" /></p>
-<p>Vi kan ud fra boxplots se at dokumentarfilm rates højt i modsætning til actionfilm. Vi kan i tabellen herunder se hvor de største forskelle er mellem genrerne.</p>
+<p>Vi kan opstille resultaterne i et Venn-diagram som vist på figuren.<img src="img/sandsynligheder1.png" align="right" width="35%" height="35%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/> Vi kan udføre et stokastisk eksperiment og tilfældigt udtage en person og undersøge, hvor stor sandsynligheden er for at vedkommende drikker kaffe.</p>
+<p>Vi skriver P for probability dvs. sandsynlighed. Sandsynligheden for en person drikker kaffe kan opskrives som:</p>
+<p><span class="math display">\[\small P(Kaffe)=\frac{Antal\ kaffe-drikkere}{Antal\ adspurgte}=\frac{600}{800}=0.75=75\%\]</span></p>
+<p>På samme måde kan man finde sandsynligheden for at en person drikker the:</p>
+<p><span class="math display">\[\small P(The)=\frac{Antal\ the-drikkere}{Antal\ adspurgte}=\frac{400}{800}=0.5=50\%\]</span></p>
+<div id="betingede-sandsynligheder" class="section level2">
+<h2><span class="header-section-number">1.1</span> Betingede sandsynligheder</h2>
+<p>Vi kan også se på en mindre gruppe af de adspurgte, hvis fx. man kun vil se på kaffedrikkerne kunne man ønske at undersøge, hvor stor en andel af kaffedrikkerne der både drikker the og kaffe. Vi siger at vi betinger med en hændelse, hvis vi ser på en sådan delmængde af de adspurgte. Betingede sandsynligheder kan formuleres på flere måder fx:</p>
+<p>Givet at man drikker kaffe hvad er da sandsynligheden for at man ligeledes drikker the?
+Hvis man drikker kaffe hvad er da sandsynligheden for at man ligeledes drikker the?
+Hvad er da sandsynligheden for, at man drikker the, når man drikker kaffe?
+Hvad er andelen af kaffedrikkere, der drikker the?</p>
+<p>Vi siger vi betinger med hændelsen A, man drikker kaffe, og ser således kun på gruppen af kaffedrikkere. Hvad er så sandsynligheden for at man også drikker the hændelsen B?
+Vi skal altså bestemme sandsynligheden for B givet A, med symboler skriver vi det som <span class="math inline">\(\small P(B\mid A)\)</span>. Vi kan udregne dette som
+<span class="math display">\[\small P(B\mid A)=\frac{P(B\cap A)}{P(A)}\]</span></p>
+<p>Det betyder vi kan udregne hvad er andelen af kaffedrikkere, der drikker the, ved formlen:
+<span class="math display">\[\small P(B\mid A)=P(kaffe\ og\ the\mid  kaffe)=\frac{P(kaffe\ og\ the\cap kaffe)}{P(kaffe)}\]</span>
+<span class="math display">\[\small \frac{\frac{200}{800}}{\frac{600}{800}}=\frac{200}{600}=\frac{1}{3}\approx 33\%\]</span></p>
+<div id="race-og-ddsdom-eksempel" class="section level3">
+<h3><span class="header-section-number">1.1.1</span> Race og dødsdom eksempel</h3>
+<p><img src="img/death-row-inmates-drug-cocktail.jpg" align="right" width="40%" height="40%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+<p>I et kendt studie fra 1991 af Radelet and Pierce, om Florida, har man indsamlet data i retssager hvor der var mulighed for dødsstraf. Man har blandt andet indsamlet data om den tiltaltes etnicitet, offerets etnicitet samt udfaldet af retssagen dvs. om den tiltalte blev idømt dødstraf eller ikke. Studiets formål var at afgøre om der ved domstolene er en bias, således at amerikanere af afrikansk afstamning oftere idømmmes dødsstraf end hvide.</p>
 <table>
 <thead>
 <tr class="header">
-<th align="left">Forskelle gennemsnit genrer</th>
-<th align="left">Absolutte forskelle</th>
+<th align="left">Race tiltalt</th>
+<th align="left">Dødsdom</th>
+<th align="left">Ikke dødsdom</th>
+<th align="left">Total</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Action - dokumentar</td>
-<td align="left">1.5465517</td>
+<td align="left">Hvid</td>
+<td align="left">53</td>
+<td align="left">430</td>
+<td align="left">483</td>
 </tr>
 <tr class="even">
-<td align="left">Action - drama</td>
-<td align="left">0.9324561</td>
+<td align="left">Afrikansk amerikaner</td>
+<td align="left">15</td>
+<td align="left">176</td>
+<td align="left">191</td>
 </tr>
 <tr class="odd">
-<td align="left">Action - komedie</td>
-<td align="left">0.3148402</td>
-</tr>
-<tr class="even">
-<td align="left">Action - romance</td>
-<td align="left">0.6735294</td>
-</tr>
-<tr class="odd">
-<td align="left">Action - short</td>
-<td align="left">0.788806</td>
-</tr>
-<tr class="even">
-<td align="left">Dokumentar - drama</td>
-<td align="left">0.6140956</td>
-</tr>
-<tr class="odd">
-<td align="left">Dokumentar - komedie</td>
-<td align="left">1.2317115</td>
-</tr>
-<tr class="even">
-<td align="left">Dokumentar - romance</td>
-<td align="left">0.8730223</td>
-</tr>
-<tr class="odd">
-<td align="left">Dokumentar - short</td>
-<td align="left">0.7577458</td>
-</tr>
-<tr class="even">
-<td align="left">Drama - komedie</td>
-<td align="left">0.617616</td>
-</tr>
-<tr class="odd">
-<td align="left">Drama - romance</td>
-<td align="left">0.2589267</td>
-</tr>
-<tr class="even">
-<td align="left">Drama - short</td>
-<td align="left">0.1436502</td>
-</tr>
-<tr class="odd">
-<td align="left">Komedie - romance</td>
-<td align="left">0.3586892</td>
-</tr>
-<tr class="even">
-<td align="left">Komedie - short</td>
-<td align="left">0.4739658</td>
-</tr>
-<tr class="odd">
-<td align="left">Romance - short</td>
-<td align="left">0.1152766</td>
+<td align="left">Total</td>
+<td align="left">68</td>
+<td align="left">606</td>
+<td align="left">674</td>
 </tr>
 </tbody>
 </table>
+<p>Sandsynligheden for at blive dødsdømt, når man er tiltalt kan udregnes til:
+<span class="math display">\[\small P(dø\ dsdom)=\frac{dø\ dsdø\ mte}{alle\ tiltalte}=\frac{68}{674}=0.1009\]</span></p>
+<p>Sandsynligheden for at blive dødsdømt, når man er hvid og tiltalt er en betinget sandsynlighed, denne kan udregnes til:
+<span class="math display">\[\small P(dø\ dsdom\mid hvid)=\frac{P(dø\ dsdom \cap hvid)}{P(hvide\ tiltalte)}=\frac{53}{483}=0.1097\]</span></p>
+<p>Sandsynligheden for at blive dødsdømt, hvis man er afrikansk-amerikaner og tiltalt er en betinget sandsynlighed, denne kan udregnes til:
+<span class="math display">\[\small P(dø\ dsdom\mid sort)=\frac{P(dø\ dsdom\cap sort)}{P(sorte\ tiltalte)}=\frac{15}{191}=0.0785\]</span></p>
+<p>Dette tyder ikke på at der er racemæssig forskel på andelen af dødsdømte.</p>
+</div>
+</div>
+<div id="uafhngighed" class="section level2">
+<h2><span class="header-section-number">1.2</span> Uafhængighed</h2>
+<p>Vi kan sige at 2 hændelser A og B er uafhængige hvis sandsynligheden for at den ene hændelse indtræffer ikke påvirkes af om den anden hændelse indtræffer eller ej. Dette kan vi udtrykke vha. betingede sandsynligheder.</p>
+<p><span class="math display">\[\small P(A\mid B)=P(A)\]</span>
+Her står sandsynligheden for A er den samme ligegyldigt om hændelsen B indtræffer eller ej.
+<span class="math display">\[\small P(B\mid A)=P(B)\]</span>
+Her står sandsynligheden for B er den samme ligegyldigt om hændelsen A indtræffer eller ej.</p>
+<p>Vi kan omskrive begge ligninger til nedenstående resultat.
+<span class="math display">\[\small P(A\mid B)=P(A)\Leftrightarrow \frac{P(A\cap B)}{P(B)}=P(A)\Leftrightarrow P(A\cap B)=P(A)\cdot P(B)\]</span>
+Så hændelserne A og B er uafhængige hvis fælleshændelsen <span class="math inline">\(\small P(A\cap B)\)</span> er lig med produktet af hændelserne <span class="math inline">\(\small P(A) \cdot P(B)\)</span></p>
+<p>Er hændelserne drikke kaffe og the uafhængige?
+Vi finder sandsynligheden for fælleshændelsen:
+<span class="math display">\[\small P(Kaffe \cap The)=\frac{200}{800}=0.25\]</span>
+Er sandsynligheden for fælleshændelsen lig med produktet af sandsynlighederne?
+<span class="math display">\[\small P(Kaffe)\cdot P(The)=\frac{600}{800}\cdot \frac{400}{800}=\frac{3}{4}\cdot \frac{1}{2}=\frac{3}{8}=0.375\]</span>
+Hændelserne er altså ikke uafhængige for 0.25 er ikke 0.375.</p>
+<p>Vi ser på om hændelserne hvid tiltalt og dødsdom er afhængige.
+Vi finder sandsynligheden for fælleshændelsen:
+<span class="math display">\[\small P(Dø\ dsdom \cap Hvid)=\frac{53}{674}=0.08\]</span>
+Er sandsynligheden for fælleshændelsen lig med produktet af sandsynlighederne?
+<span class="math display">\[\small P(Dø\ dsdom)\cdot P(Hvid)=\frac{68}{674}\cdot \frac{483}{674}=0.10 \cdot 0.72=0.072\]</span>
+Sandsynlighederne 0.08 og 0.072 er tæt på hinanden, udtaler vi os om en population ville vi nok ikke kunne afvise at hændelserne er uafhængige. Vi vil i afsnittede om Chi i anden tests se på hvorledes man tester uafhængighed.</p>
+<details>
+<p><summary>Spørgsmål dødsdom</summary>
+Vi inddeler nu skemaet ovenfor, med en variabel, der angiver offerets race.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Race offer</th>
+<th align="left">Race tiltalt</th>
+<th align="left">Dødsdom</th>
+<th align="left">Ikke dødsdom</th>
+<th align="left">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Hvid</td>
+<td align="left">Hvid</td>
+<td align="left">53</td>
+<td align="left">414</td>
+<td align="left">467</td>
+</tr>
+<tr class="even">
+<td align="left">Hvid</td>
+<td align="left">Afrikansk amerikaner</td>
+<td align="left">11</td>
+<td align="left">37</td>
+<td align="left">48</td>
+</tr>
+<tr class="odd">
+<td align="left">Afrikansk amerikaner</td>
+<td align="left">Hvid</td>
+<td align="left">0</td>
+<td align="left">16</td>
+<td align="left">16</td>
+</tr>
+<tr class="even">
+<td align="left">Afrikansk amerikaner</td>
+<td align="left">Afrikansk amerikaner</td>
+<td align="left">4</td>
+<td align="left">139</td>
+<td align="left">143</td>
+</tr>
+<tr class="odd">
+<td align="left">Total</td>
+<td align="left"></td>
+<td align="left">68</td>
+<td align="left">606</td>
+<td align="left">674</td>
+</tr>
+</tbody>
+</table>
+<p><strong>1.</strong> Hvad er sandsynligheden for at blive dødsdømt, hvis man er hvid tiltalt for at have dræbt en hvid?<br />
+<strong>2.</strong> Hvad er sandsynligheden for at blive dødsdømt, givet man er sort tiltalt for at have dræbt en hvid?<br />
+<strong>3.</strong> Hvad er sandsynligheden for at blive dødsdømt, givet man er hvid tiltalt for at have dræbt en sort?<br />
+<strong>4.</strong> Hvad er sandsynligheden for at blive dødsdømt, når man er sort tiltalt for at have dræbt en sort?</p>
 </details>
-<div id="selvtest-1" class="section level2">
-<h2><span class="header-section-number">3.1</span> Selvtest</h2>
-<h2>
-<a href="https://www.edutest.dk/mod/quiz/view.php?id=64" target="_blank">Selvtest Anova analyse med videoløsninger</a>
-</h2>
+<br>
+<details>
+<p><summary>Svar dødsdom</summary></p>
+<p><img src="img/usdeath2.jpg" align="right" width="30%" height="30%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/>
+<strong>1.</strong> Sandsynligheden for at blive dødsdømt, hvis man er hvid tiltalt for at have dræbt en hvid kan udregnes til:<br />
+<span class="math display">\[\small P(Dø\ dsdø\ mt \mid hvid\ tiltalt\ og\ hvidt\ offer)=\frac{53}{467}=0.1135\]</span><br />
+<strong>2.</strong> Sandsynligheden for at blive dødsdømt, givet man er sort tiltalt for at have dræbt en hvid kan udregnes til:<br />
+<span class="math display">\[\small P(Dø\ dsdø\ mt \mid sort\ tiltalt\ og\ hvidt\ offer)=\frac{11}{48}=0.2292\]</span><br />
+<strong>3.</strong> Sandsynligheden for at blive dødsdømt, givet man er hvid tiltalt for at have dræbt en sort kan udregnes til:<br />
+<span class="math display">\[\small P(Dø\ dsdø\ mt \mid hvid\ tiltalt\ og\ sort\ offer)=\frac{0}{16}=0\]</span>
+<strong>4.</strong> Sandsynligheden for at blive dødsdømt, når man er sort tiltalt for at have dræbt en sort kan udregnes til
+<span class="math display">\[\small P(Dø\ dsdø\ mt \mid sort\ tiltalt\ og\ sort\ offer)=\frac{4}{143}=0.0280\]</span></p>
+<p>Vi ser nu at der synes at være større sandsynlighed for dødsdom for sorte end for hvide, denne effekt kommer først frem når vi kontrollerer for offer race. Man kalder dette for Simpsons paradoks.</p>
+</details>
 </div>
 </div>
             </section>
@@ -369,8 +363,8 @@ Vi opstiller hypoteserne for test af om middelværdierne er identiske:
           </div>
         </div>
       </div>
-<a href="chi-i-anden-tests.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="binomialfordelingen.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="chi-i-anden-tests.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
