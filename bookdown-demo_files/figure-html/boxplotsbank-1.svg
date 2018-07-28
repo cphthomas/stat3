@@ -290,9 +290,9 @@
 <path style="fill:none;stroke-width:1.066978;stroke-linecap:butt;stroke-linejoin:round;stroke:rgb(20%,20%,20%);stroke-opacity:1;stroke-miterlimit:10;" d="M 449.230469 223.464844 L 449.230469 278.984375 "/>
 <path style="fill-rule:nonzero;fill:rgb(38.039216%,61.176471%,100%);fill-opacity:1;stroke-width:1.066978;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(20%,20%,20%);stroke-opacity:1;stroke-miterlimit:10;" d="M 389.6875 185.3125 L 389.6875 223.464844 L 508.773438 223.464844 L 508.773438 185.3125 Z M 389.6875 185.3125 "/>
 <path style="fill:none;stroke-width:2.133957;stroke-linecap:butt;stroke-linejoin:round;stroke:rgb(20%,20%,20%);stroke-opacity:1;stroke-miterlimit:10;" d="M 389.6875 203.242188 L 508.773438 203.242188 "/>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,64.705882%,0%);fill-opacity:1;" d="M 135.21875 204.375 C 135.21875 209.117188 128.109375 209.117188 128.109375 204.375 C 128.109375 199.636719 135.21875 199.636719 135.21875 204.375 "/>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,64.705882%,0%);fill-opacity:1;" d="M 294.003906 205.800781 C 294.003906 210.539062 286.894531 210.539062 286.894531 205.800781 C 286.894531 201.058594 294.003906 201.058594 294.003906 205.800781 "/>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,64.705882%,0%);fill-opacity:1;" d="M 452.785156 203.859375 C 452.785156 208.601562 445.675781 208.601562 445.675781 203.859375 C 445.675781 199.121094 452.785156 199.121094 452.785156 203.859375 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,64.705882%,0%);fill-opacity:1;" d="M 135.21875 204.363281 C 135.21875 209.101562 128.109375 209.101562 128.109375 204.363281 C 128.109375 199.621094 135.21875 199.621094 135.21875 204.363281 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,64.705882%,0%);fill-opacity:1;" d="M 294.003906 205.789062 C 294.003906 210.527344 286.894531 210.527344 286.894531 205.789062 C 286.894531 201.046875 294.003906 201.046875 294.003906 205.789062 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,64.705882%,0%);fill-opacity:1;" d="M 452.785156 203.800781 C 452.785156 208.542969 445.675781 208.542969 445.675781 203.800781 C 445.675781 199.058594 452.785156 199.058594 452.785156 203.800781 "/>
 <g style="fill:rgb(30.196078%,30.196078%,30.196078%);fill-opacity:1;">
   <use xlink:href="#glyph0-1" x="18.75" y="324.820312"/>
   <use xlink:href="#glyph0-2" x="21.679428" y="324.820312"/>
